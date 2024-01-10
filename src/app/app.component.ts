@@ -12,4 +12,9 @@ export class AppComponent {
     new WishItem('find some grass'),
   ];
   title = 'wishlist-app';
+
+  toggleItem(item: WishItem) {
+    item.isComplete = !item.isComplete;
+    console.log(item);
+  }
 }
