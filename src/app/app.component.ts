@@ -11,7 +11,23 @@ export class AppComponent {
     new WishItem('get', true),
     new WishItem('find some grass'),
   ];
+
+  listFilter: String = '0';
+
+  newWishText = '';
+
   title = 'wishlist-app';
+
+  visibleItems: WishItem[] = this.items;
+
+  addNewWish() {
+    this.items.push(new WishItem(this.newWishText));
+    this.newWishText = '';
+  }
+
+  filterChanged(value: any) {
+    console.log(5);
+  }
 
   toggleItem(item: WishItem) {
     item.isComplete = !item.isComplete;
